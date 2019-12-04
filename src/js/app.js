@@ -30,7 +30,7 @@ window.onload = function(){
         };
 
         getSuggestions(wordToGetSuggestion).done(function(matches){
-            autoComplete.renderItems(matches);
+            autoComplete.render(matches);
         });
         
 

@@ -46,7 +46,7 @@ function getSuggestions(word){
         });
     }
 
-    getWords();
+    getWords(word);
     return lastWordPromise;
 }
 

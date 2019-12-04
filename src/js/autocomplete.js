@@ -5,6 +5,8 @@ export default class Autocomplete {
         this.options = $.extend({}, options, {})
         this.containerSelector = this.eleselector + '-container';
         this.items = options.items || [];
+
+        this._initialize();
     }
 
     /**
