@@ -3,7 +3,7 @@
  */
 
 import debounce from './util.js'
-import Autocomplete from './Autocomplete.js'
+import Autocomplete from './autocomplete.js'
 import getSuggestions from './Suggestion.js'
 
 window.onload = function(){

@@ -8,7 +8,7 @@ function debounce(fn, timeout){
     const timerInterval = timeout;
     let timer;
     
-    return function(args...){
+    return function(...args){
         if(!timer){
             clearTimeout(timer);
         }
@@ -18,6 +18,6 @@ function debounce(fn, timeout){
     }
 }
 
-export {
+export default {
     debounce
 }

@@ -7,9 +7,9 @@ var lastWord, lastWordPromise;
 function wordSuggestions(word){  
     var defer = $.Deferred();
     var matches = ['_pre_$', '_pre_$_post', '$_post'];
-    var to_return {
+    var to_return = {
         word: word,
-        matches: matches.map(a => a.replace('$', word)) + [word];
+        matches: matches.map(a => a.replace('$', word)) + [word]
     }
 
     //random timeout
@@ -50,6 +50,6 @@ function getSuggestions(word){
     return lastWordPromise;
 }
 
-export {
+export default {
     getSuggestions
 }

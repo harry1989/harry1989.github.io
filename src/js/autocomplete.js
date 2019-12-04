@@ -25,7 +25,7 @@ export default class Autocomplete {
      * handles only the click/select event. However we can
      * handle keyboard naviagtion to move up/down.
      */
-    _attachEvents = function(){
+    _attachEvents(){
         $(this.containerSelector).on('click', 'a', function(){
             var targetEle = event.target;
             var selectedValue = targetEle.dataset.name;
