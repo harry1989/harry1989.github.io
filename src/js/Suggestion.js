@@ -9,7 +9,7 @@ function wordSuggestions(word){
     var matches = ['_pre_$', '_pre_$_post', '$_post'];
     var to_return = {
         word: word,
-        matches: matches.map(a => a.replace('$', word)) + [word]
+        matches: matches.map(a => a.replace('$', word)).concat([word])
     }
 
     //random timeout
