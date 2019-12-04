@@ -27,10 +27,12 @@ window.onload = function(){
             //if selection has multiple words, then we get the
             //first word
             wordToGetSuggestion = value.substr(selStart).split(' ').pop(0);
-        }
+        };
 
-        var matches = getSuggestions(wordToGetSuggestion);
-        autoComplete.renderItems(matches)
+        getSuggestions(wordToGetSuggestion).done(function(matches){
+            autoComplete.renderItems(matches);
+        });
+        
 
     }, 100));
 
