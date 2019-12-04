@@ -59,7 +59,7 @@ export default class Autocomplete {
     generateList(){
         var html = "<ul><li>" + this.items.map(function(item) {
             return "<a href='' data-name='" + item + "'>" + item + "</a>"
-        }).reduce((a, b) => a + "</li><li>" + b) + "</li><ul>"
+        }).reduce((a, b) => a + "</li><li>" + b) + "</li></ul>"
 
         $(this.containerSelector).html(html)
     }
