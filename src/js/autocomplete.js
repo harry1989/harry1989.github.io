@@ -3,7 +3,7 @@ export default class Autocomplete {
     constructor(selector, options){
         this.eleselector = selector;
         this.options = $.extend({}, options, {})
-        this.containerSelector = this.eleselector.replace('#', '') + '-container';
+        this.containerSelector = this.eleselector + '-container';
         this.items = options.items || [];
 
         this._initialize();
@@ -15,7 +15,7 @@ export default class Autocomplete {
      */
     _initialize(){
         if ($(this.containerSelector).length == 0){
-            $('body').append('<div id="' + this.containerSelector + '"></div>')
+            $('body').append('<div id="' + this.containerSelector.replace('#', '') + '"></div>')
         }
 
         this._attachEvents();
