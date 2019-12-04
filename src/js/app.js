@@ -27,6 +27,9 @@ window.onload = function(){
             wordToGetSuggestion = value.substr(0, selStart).split(' ').pop();
         };
 
+        // set the cursor starting position.
+        $(event.target).data('cursor', selStart);
+
         getSuggestions(wordToGetSuggestion).done(function(matches){
             autoComplete.render(matches);
         });
@@ -41,22 +44,22 @@ window.onload = function(){
 
         // store the last cursor position, 
         var cursorPosition = ele.data('cursor');
+        var to_set = '';
         if(cursorPosition == existingValue.length) {
             values.pop();
             values.push(selectedItem);
             to_set = values.join(' ');
+        } else {
+            var before = existingValue.substr(0,cursorPosition).lastIndexOf(' ');
+            var after = existingValue.substr(cursorPosition).indexOf(' ');
+            if(before != -1){
+                to_set = existingValue.substr(0, before) + ' '
+            }
+            to_set += selectedItem;
+            if(after != -1){
+                to_set += existingValue.substr(0, after)
+            }
         }
-
-        var before = existingValue.substr(0,cursorPosition).lastIndexOf(' ');
-        var after = existingValue.substr(cursorPosition).indexOf(' ');
-        if(before != -1){
-            to_set = existingValue.substr(0, before) + ' '
-        }
-        to_set = selectedItem
-        if(after != -1){
-            to_set = existingValue.substr(0, after)
-        }
-
         ele.value(to_set);
         // after selecting it close it.
         autoComplete.close();
