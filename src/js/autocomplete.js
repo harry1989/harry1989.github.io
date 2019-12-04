@@ -30,7 +30,10 @@ export default class Autocomplete {
         $(this.containerSelector).on('click', 'a', function(){
             var targetEle = event.target;
             var selectedValue = targetEle.dataset.name;
-            that.options.select && that.options.select($(that.eleselector), selectedValue)
+            that.options.select &&  that.options.select($(that.eleselector), selectedValue);
+
+            event.preventDefault();
+            return false;
         });
     }
 

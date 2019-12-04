@@ -7,9 +7,7 @@ import Autocomplete from './autocomplete.js'
 import {getSuggestions} from './Suggestion.js'
 
 window.onload = function(){
-    var autoComplete = new Autocomplete('#searchBox', {
-        select: autoCompletSelector
-    });
+    var autoComplete;
 
     // debounce it for 100ms
     $('#searchBox').on('keyup', debounce(function(event, ui){
@@ -26,7 +24,7 @@ window.onload = function(){
         } else {
             //if selection has multiple words, then we get the
             //first word
-            wordToGetSuggestion = value.substr(selStart).split(' ').pop(0);
+            wordToGetSuggestion = value.substr(0, selStart).split(' ').pop();
         };
 
         getSuggestions(wordToGetSuggestion).done(function(matches){
@@ -63,5 +61,9 @@ window.onload = function(){
         // after selecting it close it.
         autoComplete.close();
     }
+
+    autoComplete = new Autocomplete('#searchBox', {
+        select: autoCompletSelector
+    });
 }
 
