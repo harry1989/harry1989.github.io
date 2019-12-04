@@ -1,0 +1,26 @@
+{
+  "name": "sample-autocomplete",
+  "version": "1.0.0",
+  "description": "Auto complete demo",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "babel-loader": "^8.0.6",
+    "webpack-cli": "^3.3.10",
+    "webpack": "^4.41.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "/home/gitpod/.nvm/versions/node/v10.16.3/bin/webpack && cp src/html/index.html . && cp src/css/* dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harry1989/harry1989.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harry1989/harry1989.github.io/issues"
+  },
+  "homepage": "https://github.com/harry1989/harry1989.github.io#readme"
+}
