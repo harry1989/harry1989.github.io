@@ -60,7 +60,7 @@ window.onload = function(){
                 to_set += existingValue.substr(0, after)
             }
         }
-        ele.value(to_set);
+        ele.val(to_set);
         // after selecting it close it.
         autoComplete.close();
     }
