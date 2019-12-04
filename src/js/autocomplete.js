@@ -6,7 +6,7 @@ export default class Autocomplete {
         this.containerSelector = this.eleselector + '-container';
         this.items = options.items || [];
 
-        _initialize();
+        this._initialize();
     }
 
     /**
@@ -18,7 +18,7 @@ export default class Autocomplete {
             $('body').append('<div id="' + this.containerSelector + '"></div>')
         }
 
-        _attachEvents();
+        this._attachEvents();
     }
 
     /**
@@ -26,10 +26,11 @@ export default class Autocomplete {
      * handle keyboard naviagtion to move up/down.
      */
     _attachEvents(){
+        var that = this;
         $(this.containerSelector).on('click', 'a', function(){
             var targetEle = event.target;
             var selectedValue = targetEle.dataset.name;
-            this.options.select && this.options.select($(this.eleselector), selectedValue)
+            that.options.select && that.options.select($(that.eleselector), selectedValue)
         });
     };
 
@@ -68,7 +69,7 @@ export default class Autocomplete {
             return "<a href='' data-name='" + item + "'>" + item + "</a>"
         }).reduce((a, b) => a + "</li><li>" + b) + "</li><ul>"
 
-        this.containerSelector.html(html)
+        $(this.containerSelector).html(html)
     }
 
     render(items){
