@@ -32,17 +32,6 @@ export default class Autocomplete {
             var selectedValue = targetEle.dataset.name;
             that.options.select && that.options.select($(that.eleselector), selectedValue)
         });
-    };
-
-    /**
-     * Default selector function which sets the
-     * value
-     * 
-     * @param {*} ele 
-     * @param {*} value 
-     */
-    static defaultSelector(ele, value){
-        $(ele).value(value)
     }
 
     /**
