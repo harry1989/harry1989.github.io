@@ -16,7 +16,8 @@ window.onload = function(){
 
         var selStart = event.target.selectionStart;
         var selEnd = event.target.selectionEnd;
-        var value = $(this).val()
+        var value = $(event.target).val();
+        
         var wordToGetSuggestion;
         if (selStart == selEnd && selEnd == value.length){
             //cursor is at the last position
