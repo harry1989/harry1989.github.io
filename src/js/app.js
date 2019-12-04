@@ -7,7 +7,9 @@ import Autocomplete from './autocomplete.js'
 import getSuggestions from './Suggestion.js'
 
 window.onload = function(){
-    var autoComplete = new Autocomplete('#searchBox');
+    var autoComplete = new Autocomplete('#searchBox', {
+        select: autoCompletSelector
+    });
 
     // debounce it for 100ms
     $('#searchBox').on('keyup', debounce(function(event, ui){
@@ -30,7 +32,6 @@ window.onload = function(){
         autoComplete.renderItems(matches)
 
     }, 100));
-
 
     var autoCompletSelector = function(ele, selectedItem){
         var existingValue = ele.val();
