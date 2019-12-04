@@ -57,7 +57,7 @@ window.onload = function(){
             }
             to_set += selectedItem;
             if(after != -1){
-                to_set += existingValue.substr(0, after)
+                to_set += existingValue.substr(cursorPosition + after)
             }
         }
         ele.val(to_set);
