@@ -2,9 +2,9 @@
  * Initializer
  */
 
-import debounce from './util.js'
+import {debounce} from './util.js'
 import Autocomplete from './autocomplete.js'
-import getSuggestions from './Suggestion.js'
+import {getSuggestions} from './Suggestion.js'
 
 window.onload = function(){
     var autoComplete = new Autocomplete('#searchBox', {

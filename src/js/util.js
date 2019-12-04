@@ -18,6 +18,6 @@ function debounce(fn, timeout){
     }
 }
 
-export default {
+export {
     debounce
 }

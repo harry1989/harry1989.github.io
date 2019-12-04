@@ -50,6 +50,6 @@ function getSuggestions(word){
     return lastWordPromise;
 }
 
-export default {
+export {
     getSuggestions
 }
