@@ -1,8 +1,8 @@
 export default class Autocomplete {
-
+   
     constructor(selector, options){
         this.eleselector = selector;
-        this.options = $.extend(defaultOptions, options, {})
+        this.options = $.extend({}, options, {})
         this.containerSelector = this.eleselector + '-container';
         this.items = options.items || [];
 
@@ -29,9 +29,20 @@ export default class Autocomplete {
         $(this.containerSelector).on('click', 'a', function(){
             var targetEle = event.target;
             var selectedValue = targetEle.dataset.name;
-            this.options.select($(this.eleselector), selectedValue)
+            this.options.select && this.options.select($(this.eleselector), selectedValue)
         });
     };
+
+    /**
+     * Default selector function which sets the
+     * value
+     * 
+     * @param {*} ele 
+     * @param {*} value 
+     */
+    static defaultSelector(ele, value){
+        $(ele).value(value)
+    }
 
     /**
      *  Opens the autocomplete list
