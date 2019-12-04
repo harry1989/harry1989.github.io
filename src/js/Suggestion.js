@@ -31,7 +31,7 @@ function getSuggestions(word){
         return lastWordPromise;
     }
 
-    defer = new $.Deferred();
+    let defer = new $.Deferred();
     lastWordPromise = defer.promise();
     lastWord = word;
 
